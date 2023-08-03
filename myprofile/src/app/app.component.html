@@ -1,340 +1,399 @@
-
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .spacer {
-    flex: 1;
-  }
-
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
-    opacity: 0.8;
-  }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  svg.material-icons:not(:last-child) {
-    margin-right: 8px;
-  }
-
-  .card svg.material-icons path {
-    fill: #888;
-  }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .card {
-    all: unset;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
-
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: calc(100vh - 95px);
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-  .terminal {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 6px;
-    padding-top: 45px;
-    margin-top: 8px;
-    overflow: hidden;
-    background-color: rgb(15, 15, 16);
-  }
-
-  .terminal::before {
-    content: "\2022 \2022 \2022";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: rgb(58, 58, 58);
-    color: #c2c3c4;
-    width: 100%;
-    font-size: 2rem;
-    line-height: 0;
-    padding: 14px 0;
-    text-indent: 4px;
-  }
-
-  .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
-
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-  }
-
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-  }
-
-  svg#clouds {
-    position: fixed;
-    bottom: -160px;
-    left: -230px;
-    z-index: -10;
-    width: 1920px;
-  }
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
-
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  }
-</style>
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
-    width="100"
-    alt="Vish"
-    margin="5px"
-    src="./assets/vish.jpeg"
-  />
+  <img width="100" alt="Vish" margin="5px" src="./assets/vish.jpeg" style="border:5px solid #fff" />
   <span>Welcome to my Portfolio</span>
-    <div class="spacer"></div>
-    <a aria-label="Vishnu on Linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/in/vishnustiwary/" title="Twitter">
-      <img
-    width="40"
-    alt="Vish"
-    src="./assets/linkedin.jpeg"
-  />
-    </a>
+  <div class="spacer"></div>
+  <a aria-label="Vishnu on Linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/in/vishnustiwary/"
+    title="Twitter">
+    <img width="40" alt="Vish" src="./assets/linkedin.jpeg" />
+  </a>
 </div>
 
 <div class="content" role="main">
   <!-- Highlight Card -->
-  
+
 
   <div class="page-content">
     <div class="container">
 
-  <!-- Resources -->
-  <div class="cover shadow-lg bg-white">
-    <div class="cover-bg p-3 p-lg-4 text-white">
-      <div class="row">
-        <div class="col-lg-4 col-md-5" style="text-align: center; ">
-          <div class="avatar hover-effect bg-white shadow-sm p-1"><img style="border-radius: 1px  #4603ca;" src="./assets/vish.jpeg" width="200" height="200"/></div>
-        </div>
-        <div class="col-lg-8 col-md-7 text-center text-md-start">
-          <div class="card highlight-card card-small">
-            <h2>VISHNU S TIWARY</h2>
+      <!-- Resources -->
+      <div class="cover shadow-lg bg-white">
+        <div class="cover-bg p-3 p-lg-4 text-white">
+          <div class="row">
+            <div class="col-lg-4 col-md-5" style="text-align: center; ">
+              <div class="avatar hover-effect bg-white shadow-sm p-1"><img style="border-radius: 1px  #4603ca;"
+                  src="./assets/vish.jpeg" width="200" height="200" /></div>
+            </div>
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <div class="card highlight-card card-small">
+                <h2 style="margin-right: 15px;">VISHNU S TIWARY, </h2>
+                <h2 style="margin-right: 15px;"><i class="fa fa-phone" aria-hidden="true"></i> +91.9742503868, </h2>
+                <h2 style="margin-right: 15px;"> <i class="fa fa-envelope" aria-hidden="true"></i>
+                  vishnustiwary@gmail.com</h2>
+              </div>
+              <h4 data-aos="fade-left" data-aos-delay="100">Full stack Developer</h4>
+              <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a
+                  class="btn btn-light text-dark shadow-sm mt-1 me-1" href="vishnu_resume.pdf" target="_blank">Download
+                  CV</a><a class="btn btn-success shadow-sm mt-1" href="#contact">Hire Me</a></div>
+            </div>
           </div>
-          <h4 data-aos="fade-left" data-aos-delay="100">Full stack Developer</h4>
-          <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-light text-dark shadow-sm mt-1 me-1" href="vishnu_resume.pdf" target="_blank">Download CV</a><a class="btn btn-success shadow-sm mt-1" href="#contact">Hire Me</a></div>
+
+          <div id="summary-section">
+
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">SUMMARY</div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <p style="text-align: justify;">A seasoned professional with 12+ years of experience in creating and
+                executing Solutions to enhance business productivity in all aspects of the software development
+                lifecycle end-to-end project Management and Architecting from concept through to development and
+                delivery. Consistently recognised as hands on and competent and leader. Skilled at coordinating cross
+                functional teams in fast paced, deadline driven environment to steer timely project completion within
+                budgetary constraints..
+                Currently working with Coforge at Greater Noida Location as Technical Analyst cum Full Stack Developer
+                and Induldged with several projects along with end-to-end technical collaboration practicing and
+                exploring DevOps culture. Upskilling myself with various technical, managerial, soft skills training and
+                certifications.. </p>
+            </div>
+          </div>
+
+          <div id="objective-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">OBJECTIVE
+            </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <p style="text-align: justify;">Seeking for a challenging position and career opportunity as a Solution
+                Architect cum Technical Project Management and possibility of career growth horizontally and vertically,
+                where I can maximize my technical, professional and management skill also contribute to quality
+                delivery, program development, and training experience for the betterment of the firm in such a way that
+                I can work in collaboration and alignment with the roadmap and vision of the organization and helping
+                everyone to Make Our World ~ A Better Place to Live joyfully.
+              </p>
+              <p style="text-align: justify;">I prefer a work-life balanced environment where I can enjoy my work.
+              </p>
+            </div>
+          </div>
+
+          <div id="skills-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">SKILLS </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <ul style="line-height:180%">
+                <li>
+                  <h4> Languages :</h4> Java, JavaScript, typescript, Python
+                </li>
+                <li>
+                  <h4> Web Servers :</h4> Tomcat, Nginx
+                </li>
+                <li>
+                  <h4> Frameworks :</h4> Spring Boot 2(Java), Django(Python), Angular16
+                </li>
+                <li>
+                  <h4> Front End Technologies/Frameworks :</h4> Material, Bootstrap, Html
+                </li>
+                <li>
+                  <h4> Relational and NOSQL Database :</h4> MySQL, MongoDB and Redis
+                </li>
+                <li>
+                  <h4> Tools :</h4> VSCode, IntelliJIdea, Jenkins, Git, Maven, Docker, Ansible
+                </li>
+                <li>
+                  <h4> OS Platforms :</h4> Linux and Windows.
+                </li>
+                <li>
+                  <h4> Web Services and Cloud :</h4> REST, Microservice Architecture with Spring Cloud, AWS Proficient
+                  knowledge
+                </li>
+                <li>
+                  <h4> Software Development Methodology :</h4> Agile , Kanban, Lean
+                </li>
+                <li>
+                  <h4> Ways of Working :</h4> DevOps, Jira, GitHub, Confluence
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="experties-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">AREAS OF
+              EXPERTISE
+            </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <ul style="line-height:180%">
+                <li>
+                  <h4> Project Management</h4>
+                </li>
+                <li>
+                  <h4> Proficient Troubleshooting</h4>
+                </li>
+                <li>
+                  <h4> Srum and agile Methodologies</h4>
+                </li>
+                <li>
+                  <h4> Software Development Lifecycle</h4>
+                </li>
+                <li>
+                  <h4> Team Leadership and Supervision</h4>
+                </li>
+                <li>
+                  <h4> Web Application Design and Development
+                  </h4>
+                </li>
+                <li>
+                  <h4> Technical Process Improvements
+                  </h4>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="strength-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">STRENGTH
+            </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <ul style="line-height:180%">
+                <li>
+                  <h4> Strong collaboration, communication and interpersonal skills backed by sound analytical,
+                    technical and leadership skills. </h4>
+                </li>
+                <li>
+                  <h4> Great Quick curious Learner and influencer who loves to take the lead responsibility proactively
+                    for any key tech initiative and take it to the execution and end-user satisfaction phase.
+                  </h4>
+                </li>
+                <li>
+                  <h4> A Team player who works closely with the developers and loves to get my hand dirty as well as a
+                    Self-Starter with the ability to manage multiple priorities under aggressive deadlines and even
+                    ensure best quality design and architecture.
+                  </h4>
+                </li>
+                <li>
+                  <h4> Keep myself abreast with the emerging Internet technologies and their applications to business
+                    solutions.
+                  </h4>
+                </li>
+                <li>
+                  <h4> Requirement gathering and analysis/documentation of business and system requirements. Create and
+                    quality plans and processes.
+                  </h4>
+                </li>
+                <li>
+                  <h4> Data Modelling to meet changing business and user requirements. Love to mentor others on
+                    technical issues.
+                  </h4>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="strength-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">WORK
+              EXPERIENCE
+            </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <ul style="line-height:180%">
+                <li>
+                  <h4>Current Company Name: “Coforge” (May 2021 – till Now)
+                  </h4>
+                </li>
+                <li>
+                  <h4> Role : Technical Analyst.
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Location: Greater Noida.
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Projects : Online Banking
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Team Size: 7.
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Technology Used: JAVA, Angular, DevOps
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Frameworks Used: SpringBoot, Angular
+
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Tools Used: OpenShift, AWS, Jenkins, Kibana,
+
+
+                  </h4>
+                </li>
+                <li>
+                  <h4> Responsibilities:
+
+                  </h4>
+                  <p>
+                    Supervised and lead a team of 7 members during the development of a robust upgraded version of
+                    payments and other services-based applications, resulting in improved user experience and a 33 %
+                    revenue increase within 8 months.
+
+                    Demonstrated expertise in transiting the client’s specific needs into easy-to-understand software
+                    solutions during several phases and successful closure resulting in profitable business revenue.
+
+                    Proficiently troubleshooted simple and complex technological issues for different assigned projects,
+                    achieving 95% customer satisfaction rate.
+
+                    Enhanced the application’s features to effectively fix the bugs and optimize the overall
+                    performance, reliability, and efficiently
+
+                    Utilized software engineering expertise to develop products throughout the software lifecycle to
+                    boost business efficiency, from ideation and requirements definitions through to development and
+                    successful deployment.
+
+                  </p>
+                </li>
+              </ul>
+
+              <ul style="line-height:180%">
+                <li>
+                  <h4> Previous Company Name:</h4><span> “Oracle” (May 2019 – May 2021)</span>
+                </li>
+                <li>
+                  <h4> Previous Company Name:</h4><span> “THIS” (Feb 2014 – April 19)
+                  </span>
+                </li>
+                <li>
+                  <h4> Previous Company Name:</h4><span> “DSM Pvt. Ltd.”(March 2012 – December 2013)
+                  </span>
+                </li>
+                <li>
+                  <h4> Previous Company Name:</h4><span> “Nirmitsu Technology Pvt. Ltd.” (Jan 2011 – Dec 2011)
+                  </span>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <!--  -->
+          <div id="extra-activity-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">EXTRA
+              ACTIVITY
+            </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <p style="text-align: justify;">Over weekends as a hobby and providing guidance and training to juniors
+                for free of cost. Training includes all sorts of latest cross cutting edge technologies and also on
+                those are being used currently.
+              </p>
+
+            </div>
+          </div>
+
+
+          <!--  -->
+          <div id="objective-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">ACADEMIC RECORD
+
+            </div>
+            <table style="width: 100%;">
+              <tr>
+                <th>
+                  Class / Degree
+                  </th>
+                <th>
+                  Board / University
+                  
+                  </th>
+                <th>Percentage
+                  /CGPA
+                  </th>
+              </tr>
+              <tr>
+                <td>Master Of Computer Application (2011)</td>
+                <td>Manipal University / Manipal Institute Of Technology, Manipal</td>
+                <td>7.4/10.0</td>
+              </tr>
+            </table>
+          </div>
+
+
+          <!--  -->
+          <div id="hobbies-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">Hobbies, which Makes me Smarter and Happier
+
+            </div>
+            <ul style="line-height:180%">
+              <li>
+                <h4> Hiking </h4><span>  It is my quintessential weekend hobby and a passion for experiencing the beauty of nature. It has a beneficial effect on my productivity and brain, also allows me to clear my mind of all worries and focus on the present, as well as providing me with exercise to improve physical fitness and stamina.
+                </span>
+              </li>
+              <li>
+                <h4> Gardening </h4><span> Gardening is very pleasant, it’s also a fantastic way to boost my productivity. It is like conserving energies for the frantic days that we might have ahead. It also teaches me about managing different projects (or in this case plants) all at the same time.
+
+                </span>
+              </li>
+              <li>
+                <h4> Nature Photography:</h4><span> To Capture the nature and its creation gives me immense  pleasure..
+
+
+                </span>
+              </li>
+             
+
+            </ul>
+          </div>
+
+
+          <!--  -->
+          <div id="declaration-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+            <div width="100%"
+              style="height: 36px;background-color: #1976d2;color:#fff;font-weight: bold;font-size: 24px;">Declaration
+            </div>
+            <div class="col-lg-8 col-md-7 text-center text-md-start">
+              <p style="text-align: justify;">I Vishnu S. Tiwary declares that the above information is true and correct to the best of my knowledge and nothing has been distorted.       
+
+              </p>
+
+            </div>
+          </div>
+
+
+          <!--  -->
+          <div id="Signature-section">
+            <hr width="100%" color="#1976d2" size="5px" />
+           
+            Yours Sincerely
+            (Vishnu S. Tiwary)
+
+          </div>
+
+
+
         </div>
       </div>
+
+
     </div>
-    
+  </div>
+</div>
