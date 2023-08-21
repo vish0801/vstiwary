@@ -16,7 +16,7 @@ export class ProductService {
   //private productsURL = environment.PRODUCTS_URL;
 
  // private productsURL = "/api/products/products.json";
-  private productsURL = "/api/products/products.json";
+  private productsURL = "./api/products/products.json";
 
   
 
