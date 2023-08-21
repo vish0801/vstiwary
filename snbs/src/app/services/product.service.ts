@@ -15,7 +15,10 @@ export class ProductService {
 
   //private productsURL = environment.PRODUCTS_URL;
 
-  private productsURL = "/api/products/products.json";
+ // private productsURL = "/api/products/products.json";
+  private productsURL = "https://github.com/vish0801/snbs/blob/main/products/products.json";
+
+  
 
   // private baseUrl = environment.apiUrl;
   // private baseUrl = 'http://localhost:8090/snbs/api/product/';
