@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1692607946686,
+  "timestamp": 1692609339337,
   "index": "https://vish0801.github.io/snbs/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://vish0801.github.io/snbs/favicon.ico",
         "https://vish0801.github.io/snbs/index.html",
-        "https://vish0801.github.io/snbs/main.039d9b2380f0e6fe.js",
+        "https://vish0801.github.io/snbs/main.32445cab2e770af3.js",
         "https://vish0801.github.io/snbs/manifest.webmanifest",
         "https://vish0801.github.io/snbs/polyfills.37195facca9876d0.js",
         "https://vish0801.github.io/snbs/runtime.76784f96ef425754.js",
@@ -64,8 +64,8 @@
     "https://vish0801.github.io/snbs/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "https://vish0801.github.io/snbs/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://vish0801.github.io/snbs/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "https://vish0801.github.io/snbs/index.html": "91f417fddf1b1a82d59e83b73b9c8832f5ede0f3",
-    "https://vish0801.github.io/snbs/main.039d9b2380f0e6fe.js": "8660e99baf65cb698b6438ff48bca2057475a335",
+    "https://vish0801.github.io/snbs/index.html": "0253365377b63b6d79e322fbef8d7ee9266e2b2f",
+    "https://vish0801.github.io/snbs/main.32445cab2e770af3.js": "2bc0f0f9ef5bc01659f9ca5b396824a396210545",
     "https://vish0801.github.io/snbs/manifest.webmanifest": "bd478dd3b834154d7423aced543b1a477684bcb3",
     "https://vish0801.github.io/snbs/polyfills.37195facca9876d0.js": "fccecf9dd0d1d16260bc799bb35a62ec23903b9e",
     "https://vish0801.github.io/snbs/runtime.76784f96ef425754.js": "06b75bbaa3a2fc5ba137189d16b11a830718bc3e",
