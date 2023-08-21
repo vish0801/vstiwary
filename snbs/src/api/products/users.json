@@ -1,0 +1,38 @@
+[
+  {
+    "userId": 1,
+    "userName": "Admin",
+    "userCode": "GDN-0011",
+    "userType": "ADMIN",
+    "userStatus": "ACTIVE",
+    "dateOfBirth": "March 19, 2021",
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "userId": 2,
+    "userName": "Manager",
+    "userCode": "GDN-0011",
+    "userType": "MANAGER",
+    "userStatus": "ACTIVE",
+    "dateOfBirth": "March 19, 2021",
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "userId": 3,
+    "userName": "User",
+    "userCode": "GDN-0011",
+    "userType": "VISITOR",
+    "userStatus": "ACTIVE",
+    "dateOfBirth": "March 19, 2021",
+    "imageUrl": "assets/images/leaf_rake.png"
+  },
+  {
+    "userId": 4,
+    "userName": "Customer",
+    "userCode": "GDN-0011",
+    "userType": "CUSTOMER",
+    "userStatus": "ACTIVE",
+    "dateOfBirth": "March 19, 2021",
+    "imageUrl": "assets/images/leaf_rake.png"
+  }
+]
