@@ -1,0 +1,93 @@
+{
+  "configVersion": 1,
+  "timestamp": 1692602289549,
+  "index": "https://vish0801.github.io/vstiwary/snbs/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://vish0801.github.io/vstiwary/snbs/favicon.ico",
+        "https://vish0801.github.io/vstiwary/snbs/index.html",
+        "https://vish0801.github.io/vstiwary/snbs/main.039d9b2380f0e6fe.js",
+        "https://vish0801.github.io/vstiwary/snbs/manifest.webmanifest",
+        "https://vish0801.github.io/vstiwary/snbs/polyfills.37195facca9876d0.js",
+        "https://vish0801.github.io/vstiwary/snbs/runtime.76784f96ef425754.js",
+        "https://vish0801.github.io/vstiwary/snbs/styles.5a0fc7164a793d55.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-128x128.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-144x144.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-152x152.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-192x192.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-384x384.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-512x512.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-72x72.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-96x96.png",
+        "https://vish0801.github.io/vstiwary/snbs/assets/images/1_youva.jpg",
+        "https://vish0801.github.io/vstiwary/snbs/assets/images/s n bussiness solutions Ara (1).png",
+        "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.8a7cb27d142e3e19.ttf",
+        "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.cf011583fb81df9f.woff",
+        "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.da909aa098b0ee2d.svg",
+        "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.e9955780856cf8aa.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "https://vish0801.github.io/vstiwary/snbs/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "https://vish0801.github.io/vstiwary/snbs/assets/images/1_youva.jpg": "de33c01cb15f5007cbeea7031ee592170a10a9d2",
+    "https://vish0801.github.io/vstiwary/snbs/assets/images/s n bussiness solutions Ara (1).png": "5784f0eed37fd6e12c85e80738e3a92159bb29c8",
+    "https://vish0801.github.io/vstiwary/snbs/favicon.ico": "ef4479c6566c5ee48251a0193113fb556c7a5a5e",
+    "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.8a7cb27d142e3e19.ttf": "13b1eab65a983c7a73bc7997c479d66943f7c6cb",
+    "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
+    "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
+    "https://vish0801.github.io/vstiwary/snbs/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
+    "https://vish0801.github.io/vstiwary/snbs/index.html": "6fcc5659d4016330b9550c6dfaea85dbc32f3e26",
+    "https://vish0801.github.io/vstiwary/snbs/main.039d9b2380f0e6fe.js": "8660e99baf65cb698b6438ff48bca2057475a335",
+    "https://vish0801.github.io/vstiwary/snbs/manifest.webmanifest": "bd478dd3b834154d7423aced543b1a477684bcb3",
+    "https://vish0801.github.io/vstiwary/snbs/polyfills.37195facca9876d0.js": "fccecf9dd0d1d16260bc799bb35a62ec23903b9e",
+    "https://vish0801.github.io/vstiwary/snbs/runtime.76784f96ef425754.js": "06b75bbaa3a2fc5ba137189d16b11a830718bc3e",
+    "https://vish0801.github.io/vstiwary/snbs/styles.5a0fc7164a793d55.css": "d4e25482f00b35004e3aedcd38f38f3c89f21a74"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

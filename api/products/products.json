@@ -1,0 +1,31 @@
+[
+  {
+    "productId": 1,
+    "productName": "3081 Nav My Notes @ 35",
+    "productCode": "23081-35",
+    "description": "3081 Nav My Notes @ 35",
+    "productType": "Notebok",
+    "quantity": 2,
+    "pPrice": 24.5,
+    "sPrice": 35,
+    "unit": "per piece",
+    "purchaseDate": "22-07-2023",
+    "starRating": 3.2,
+    "imageUrl": "assets/images/1_youva.jpg",
+    "amount": 49
+  }, {
+    "productId": 2,
+    "productName": "23793 Nav. My Notes 150",
+    "productCode": "23081-150",
+    "description": "23793 Nav. My Notes 150",
+    "productType": "Notebok",
+    "quantity": 2,
+    "pPrice": 105,
+    "sPrice": 150,
+    "unit": "per piece",
+    "purchaseDate": "22-07-2023",
+    "starRating": 4.2,
+    "imageUrl": "assets/images/1_youva.jpg",
+    "amount": 210
+  }
+]
